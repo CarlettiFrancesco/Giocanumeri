@@ -14,6 +14,7 @@ public class Giocatore implements Runnable {
 
     @Override
     public void run() {
+        Long tempoInizio = System.currentTimeMillis();
         int numero = new Random().nextInt(50) + 5;
 
         for (int i = 0; i < numero; i++) {
@@ -35,5 +36,7 @@ public class Giocatore implements Runnable {
         }
 
         System.out.println("Giocatore " + nome + ", parola: " + this.parola + ", punteggio: " + this.punteggio);
+        Long tempoFine = System.currentTimeMillis();
+        System.out.println("giocatore : "+ nome + " tempo: " + (tempoFine - tempoInizio)/1000);
     }
 }
